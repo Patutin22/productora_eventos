@@ -4,7 +4,7 @@ class CreateBands < ActiveRecord::Migration[6.1]
       t.string :name
       t.integer :members
       t.date :first_show
-      t.integer :band_type
+      t.integer :band_type, default: 0
 
       t.timestamps
     end
