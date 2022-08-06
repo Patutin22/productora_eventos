@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.date_select :date %>
+    <%= form.date_select :date, start_year: 1995%>
   </div>
 
   <div class="field">
@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :band_id %>
-    <%= form.text_field :band_id %>
+    <%= form.select :band_id, @bands %>
   </div>
 
   <div class="actions">

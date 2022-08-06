@@ -5,10 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Members</th>
-      <th>First show</th>
-      <th>Band type</th>
+      <th>Nombre</th>
+      <th>Miembros</th>
+      <th>Primer show</th>
+      <th>Tipo Banda</th>
+      <th>Cantidad Conciertos</th>
+      <th>Público Total</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +22,8 @@
         <td><%= band.members %></td>
         <td><%= band.first_show %></td>
         <td><%= band.band_type %></td>
+        <td><%= band.concerts.size %></td>
+        <td><%= band.concerts.map { |concert| concert.assistants }.sum %></td>
         <td><%= link_to 'Show', band %></td>
         <td><%= link_to 'Edit', edit_band_path(band) %></td>
         <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>

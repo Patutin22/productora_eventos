@@ -1,6 +1,7 @@
 class BandsController < ApplicationController
   before_action :set_band, only: %i[ show edit update destroy ]
-
+  before_action :set_band_type, only: %i[ new edit ]
+  
   # GET /bands or /bands.json
   def index
     @bands = Band.all
@@ -61,6 +62,11 @@ class BandsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_band
       @band = Band.find(params[:id])
+    end
+    
+    def set_band_type
+      @band_type = Band.band_types.keys.map {|type| [type.humanize, type] }
+      
     end
 
     # Only allow a list of trusted parameters through.

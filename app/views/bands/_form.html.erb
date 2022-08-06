@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :first_show %>
-    <%= form.date_select :first_show %>
+    <%= form.date_select :first_show, start_year: 1995 %>
   </div>
 
   <div class="field">
     <%= form.label :band_type %>
-    <%= form.number_field :band_type %>
+    <%= form.select :band_type, @band_type %>
   </div>
 
   <div class="actions">
